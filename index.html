@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#130e2a" />
+  <meta name="description" content="황재민 생일축하해! 끝없이 터지는 생일 축하 파티." />
+  <title>🎂 황재민 생일축하해!!!</title>
+  <style>
+    :root { color-scheme: dark; --cream: #fff9ec; --pink:#ff63b7; --lav:#ab88ff; --yellow:#ffe46d; --dark:#100c23; --muted:#b7abc9; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;font-family:ui-sans-serif,system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--dark);color:var(--cream);overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 52% 20%,#602378 0%,transparent 43%),radial-gradient(ellipse at 2% 75%,#232c75 0%,transparent 42%),radial-gradient(ellipse at 95% 90%,#6a224c 0%,transparent 34%),#100c23}
+    body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.17;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:39px 39px;mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent)}
+    #confetti{position:fixed;inset:0;pointer-events:none;z-index:9;max-width:100vw;max-height:100vh}
+    .float-layer{position:fixed;inset:0;z-index:8;pointer-events:none;overflow:hidden}
+    .floating{position:absolute;top:110vh;left:0;white-space:nowrap;font-size:clamp(14px,2.5vw,25px);font-weight:1000;text-shadow:0 2px 16px #0008;animation:lift var(--dur) linear forwards;will-change:transform,opacity}
+    @keyframes lift{0%{transform:translate3d(0,0,0) rotate(-10deg) scale(.7);opacity:0}10%{opacity:1}85%{opacity:1}100%{transform:translate3d(var(--drift),-132vh,0) rotate(14deg) scale(1.22);opacity:0}}
+    .ribbon{display:flex;overflow:hidden;border-block:2px solid #ffffff25;background:#ff65b717;white-space:nowrap;transform:rotate(-1.6deg) scale(1.02);margin:22px 0 12px;position:relative;z-index:2}
+    .ribbon-track{flex:none;display:flex;gap:30px;align-items:center;animation:slide 23s linear infinite;padding:14px 15px;font-weight:1000;color:var(--yellow);font-size:clamp(15px,2vw,21px)}
+    .ribbon-track span:nth-child(even){color:var(--pink)}
+    @keyframes slide{to{transform:translateX(-100%)}}
+    .shell{width:min(1100px,calc(100% - 32px));margin:0 auto}
+    .topbar{padding:24px 0 12px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-size:14px;font-weight:950;letter-spacing:.09em;color:#fff6d3}
+    .status-pill{font-size:12px;padding:9px 14px;border:1px solid #ffffff36;border-radius:999px;background:#ffffff0e;color:#c6f4d3;display:flex;gap:8px;align-items:center}
+    .dot{width:7px;height:7px;border-radius:50%;background:#5fff9d;box-shadow:0 0 11px #5fff9d}
+    .hero{text-align:center;padding:50px 0 40px;position:relative}
+    .hero .eyebrow{display:inline-block;border:1px solid #ffe46d6b;border-radius:100px;background:#ffe46d1c;font-size:12px;letter-spacing:.14em;font-weight:900;color:var(--yellow);padding:9px 15px;margin:0 0 25px}
+    .hero h1{font-size:clamp(57px,11.5vw,142px);line-height:1.06;letter-spacing:-.075em;margin:0;font-weight:1000;filter:drop-shadow(0 12px 45px #e4479150)}
+    .hero h1 .name{display:block;color:#fff7e5}
+    .hero h1 .happy{display:block;background:linear-gradient(115deg,#ffe666 2%,#ff88c8 46%,#a995ff 95%);background-clip:text;-webkit-background-clip:text;color:transparent;padding-bottom:.11em}
+    .emojiline{font-size:clamp(31px,5vw,52px);margin:13px 0 14px;letter-spacing:.14em;animation:bounce 1.3s ease-in-out infinite alternate}
+    @keyframes bounce{to{transform:translateY(-8px) rotate(2deg)}}
+    .sub{max-width:660px;margin:0 auto;color:#e5d8ed;font-size:clamp(15px,2.2vw,19px);line-height:1.8;word-break:keep-all}
+    .cta{margin:30px auto 13px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    button{font:inherit;cursor:pointer;transition:transform .14s ease,filter .14s ease,background .14s ease;touch-action:manipulation}
+    button:hover{filter:brightness(1.09);transform:translateY(-2px)}
+    button:active{transform:scale(.98)}
+    button:focus-visible,select:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .button-primary{border:0;border-radius:19px;background:linear-gradient(125deg,#ffe775,#ffad6a);padding:17px 28px;font-size:18px;font-weight:1000;color:#2e1734;box-shadow:0 9px 35px #ffa95840}
+    .button-secondary{border:1px solid #ffffff55;background:#ffffff13;border-radius:19px;padding:17px 24px;font-size:17px;font-weight:900;color:white;backdrop-filter:blur(12px)}
+    .hint{font-size:12px;color:#ad9ac2;line-height:1.7}
+    .stats{margin:32px auto 25px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .stat{background:#ffffff12;border:1px solid #ffffff28;padding:15px 24px;min-width:154px;border-radius:20px;backdrop-filter:blur(12px);text-align:left}
+    .stat span{display:block;font-size:12px;color:#c1b4cd;margin-bottom:6px}
+    .stat strong{display:block;font-size:29px;color:var(--yellow);font-variant-numeric:tabular-nums}
+    .cards{padding:22px 0 72px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .card{border:1px solid #ffffff2b;border-radius:26px;padding:27px;background:linear-gradient(155deg,#fffefe17,#fffefe07);backdrop-filter:blur(18px);box-shadow:0 14px 40px #05011218}
+    .card .card-icon{display:inline-grid;place-items:center;width:49px;height:49px;border-radius:16px;background:#ff74bb24;font-size:25px}
+    .card h2{font-size:23px;letter-spacing:-.045em;margin:13px 0 7px}
+    .card p{font-size:14px;line-height:1.7;color:#c5b9d0;min-height:48px;margin:0 0 21px;word-break:keep-all}
+    .card .action{border-radius:14px;padding:13px 16px;font-size:14px;font-weight:850;width:100%;background:#e5d1ff;color:#251531;border:0}
+    .card .action.yellow{background:#ffe46d}
+    .card .action.pink{background:#ff83bf}
+    .card .action.outline{background:#ffffff14;color:#fff;border:1px solid #ffffff54}
+    .stack{display:flex;gap:9px;flex-wrap:wrap}
+    .stack > *{flex:1}
+    select{border:1px solid #ffffff5b;color:#fff;background:#36264d;padding:11px 10px;border-radius:12px;font:inherit;font-size:14px;max-width:150px;flex:0 0 108px!important}
+    .tiny{font-size:12px;color:#a998ba;line-height:1.65;margin-top:11px}
+    .gauge{margin-top:13px;height:7px;background:#ffffff1c;border-radius:99px;overflow:hidden}
+    .gauge > div{height:100%;background:linear-gradient(90deg,#ffe46d,#ff74b9);width:0%;transition:width .25s}
+    .section-heading{margin-top:5px;text-align:center}
+    .section-heading h2{font-size:clamp(26px,4vw,40px);letter-spacing:-.04em;margin:0}
+    .section-heading p{color:var(--muted)}
+    .wall{max-height:360px;overflow:auto;border:1px solid #ffffff30;padding:18px;border-radius:23px;margin:22px auto 70px;background:#07051679;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:7px}
+    .wall span{font-size:12px;white-space:nowrap;color:#e6b9ec;opacity:.75;padding:3px 0}
+    .wall span:nth-child(5n+1){color:#ffe46d}
+    .wall span:nth-child(8n+3){color:#ff92ce}
+    .bottom{text-align:center;font-size:12px;color:#ab9db9;margin:0 0 45px;line-height:1.9}
+    .toast{position:fixed;left:50%;bottom:24px;z-index:50;transform:translate(-50%,130px);background:#fff8ec;color:#2c1838;border-radius:18px;padding:13px 19px;box-shadow:0 12px 30px #0007;font-size:14px;font-weight:850;transition:transform .3s ease;max-width:calc(100vw - 28px);text-align:center}
+    .toast.show{transform:translate(-50%,0)}
+    .burst-ring{position:absolute;pointer-events:none;border-radius:50%;border:7px solid #ffe46d;animation:ring .8s ease-out forwards;left:50%;top:50%;transform:translate(-50%,-50%);width:100px;height:100px}
+    @keyframes ring{to{opacity:0;width:700px;height:700px;border-width:1px}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:670px){.hero{padding:34px 0 20px}.hero h1{font-size:clamp(48px,13vw,83px)}.topbar{padding-top:15px}.cards{grid-template-columns:1fr;gap:13px;padding-bottom:55px}.card{padding:23px}.card p{min-height:auto}.stat{min-width:120px;padding:14px 17px}.stat strong{font-size:24px}.stats{gap:8px}.shell{width:min(100% - 24px,1100px)}.status-pill{font-size:11px}.button-primary,.button-secondary{width:100%}}
+    @media (prefers-reduced-motion:reduce){.ribbon-track,.emojiline{animation:none}.floating{animation-duration:.01ms!important}*{scroll-behavior:auto!important}}
+
+    .send-input{display:block;width:100%;background:#110d26;color:#fff;border:1px solid #ffffff57;border-radius:14px;padding:14px 15px;font:inherit;margin:7px 0 12px;outline:none}
+    .send-input:focus{border-color:#ffe46d;box-shadow:0 0 0 3px #ffe46d22}
+    .delivery-label{display:block;font-size:13px;font-weight:850;color:#f8eafa;margin-top:6px}
+    .consent-line{display:flex;gap:10px;align-items:flex-start;margin:0 0 21px;border:1px solid #ffde8a66;background:#ffe46d0e;border-radius:17px;padding:16px;font-size:13px;line-height:1.65;color:#f7eacb}
+    .consent-line input{margin-top:5px;accent-color:#ffe46d;min-width:18px;width:18px;height:18px}
+    .notice{font-size:13px;line-height:1.8;color:#d7c6e0;border-left:3px solid #ffcf66;padding:7px 0 7px 14px;margin:18px 0 20px}
+    .small-link{color:#ffe46d;text-decoration:underline;text-underline-offset:4px}
+  </style>
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="float-layer" id="floatLayer" aria-hidden="true"></div>
+  <header class="shell topbar"><div class="brand">🎂 HJM BIRTHDAY CLUB</div><div class="status-pill"><span class="dot"></span> 생일 축하 파티 진행 중</div></header>
+  <main>
+    <section class="hero shell" id="hero">
+      <p class="eyebrow">⚡ OFFICIAL BIRTHDAY CELEBRATION ⚡</p>
+      <h1><span class="name">황재민</span><span class="happy">생일축하해!!!</span></h1>
+      <div class="emojiline" aria-hidden="true">🎉 🎂 🥳 🎁 🎊</div>
+      <p class="sub">재민아 오늘은 온 우주가 너를 축하한다.<br>이 페이지에서 생일 축하가 멈출 일은 없다. <b style="color:#ffe46d">레전드 생일 가보자고!</b></p>
+      <div class="cta"><button class="button-primary" type="button" id="partyBtn">🚀 축하 1,000배 폭주!</button><button class="button-secondary" type="button" id="copyHero">📋 1,000줄 한 번에 복사</button></div>
+      <p class="hint">버튼을 눌러 축하 문구 폭주 + 폭죽을 터뜨려 봐!</p>
+      <div class="stats" aria-live="polite"><div class="stat"><span>화면에 나타난 축하 횟수</span><strong id="shownCount">0</strong></div><div class="stat"><span>폭죽 파티 횟수</span><strong id="burstCount">0</strong></div><div class="stat"><span>나에게 보낸 알림</span><strong id="notifCount">0</strong></div></div>
+    </section>
+    <div class="ribbon" aria-hidden="true"><div class="ribbon-track"><span>🎂 황재민 생일축하해</span><span>🎉 HAPPY JAEMIN DAY</span><span>🎁 황재민 생일축하해</span><span>🥳 LEGENDARY BIRTHDAY</span><span>🎂 황재민 생일축하해</span></div><div class="ribbon-track"><span>🎂 황재민 생일축하해</span><span>🎉 HAPPY JAEMIN DAY</span><span>🎁 황재민 생일축하해</span><span>🥳 LEGENDARY BIRTHDAY</span><span>🎂 황재민 생일축하해</span></div></div>
+    <section class="shell">
+      <div class="section-heading"><h2>축하 공격 컨트롤 센터 💘</h2><p>복사 · 나에게 자동 알림 · 공유 · 문자 · 이메일</p></div>
+      <div class="cards">
+        <article class="card"><div class="card-icon">📋</div><h2>축하 문구 대량 복사</h2><p>"황재민 생일축하해"를 원하는 횟수만큼 만들어서 한 번에 클립보드에 복사해!</p><div class="stack"><select id="copyAmount" aria-label="복사할 문구 반복 횟수"><option value="100">100번</option><option value="500">500번</option><option value="1000" selected>1,000번</option><option value="3000">3,000번</option></select><button class="action yellow" id="copyBtn" type="button">복사하기 ✨</button></div><div class="tiny">클립보드 권한 때문에 복사는 버튼을 누를 때 실행돼.</div></article>
+        <article class="card"><div class="card-icon">🔔</div><h2>나에게 자동 축하 알림</h2><p>알림에 동의하면 이 기기에 생일 축하 메시지를 자동으로 보내! 시작·중지는 직접 조절할 수 있어.</p><div class="stack"><button class="action pink" id="autoBtn" type="button">자동 알림 시작 💌</button><button class="action outline" id="stopBtn" type="button" disabled>중지</button></div><div class="gauge"><div id="notifProgress"></div></div><div class="tiny" id="notifStatus">꺼짐 · 시작하면 최대 12건, 8초 간격 · 사이트가 열려 있어야 함</div></article>
+        <article class="card"><div class="card-icon">💬</div><h2>카카오톡 · 메시지 공유</h2><p>카카오톡이나 메시지 앱을 선택해 친구에게 축하 문구를 보낼 수 있어. 실제 전송 대상은 네가 선택해!</p><button class="action yellow" id="shareBtn" type="button">카카오톡 / 메시지 앱으로 공유 ↗</button><div class="tiny">기기의 공유 메뉴를 사용해. 카카오톡 자동 DM 대량 발송 기능은 아님.</div></article>
+        <article class="card"><div class="card-icon">💥</div><h2>무한 생일 파티 모드</h2><p>사이트에 있는 동안 황재민 생일 축하 문구가 계속 날아다녀. 더 난리 나게 만들고 싶으면 폭주 버튼!</p><div class="stack"><button class="action pink" id="moreBtn" type="button">한 번 더 대폭발 🔥</button><button class="action outline" id="calmBtn" type="button">효과 줄이기</button></div><div class="tiny">휴대폰 발열·배터리를 고려해 화면에 동시에 표시되는 개수는 제한돼.</div></article>
+      </div>
+
+      <div class="section-heading"><h2>📨 생일 메시지 발송 센터</h2><p>문자 · 이메일 · 인스타그램 및 설치된 공유 앱</p></div>
+      <p class="notice"><b>중요!</b> 연락처 전체에 무단 자동 발송하는 기능은 없으며, 각 메신저의 보안 정책을 준수해요. 이 화면에서 문자는 메시지 작성창, 메일은 이메일 작성창을 열고 최종 전송은 직접 확인해요. 자동 외부 발송은 아래 GitHub Actions를 별도로 설정한 경우에만 작동해요.</p>
+      <label class="consent-line"><input type="checkbox" id="receiverConsent"><span>☑️ 수신자가 본인이거나 축하 메시지 수신에 동의했음을 확인합니다. 보낼 번호와 이메일은 이 사이트 서버에 저장하지 않습니다.</span></label>
+      <div class="cards">
+        <article class="card"><div class="card-icon">📱</div><h2>전화번호로 문자 보내기</h2><p>선택한 전화번호로 생일 축하 메시지가 작성된 문자 앱을 열어요. 실제 발송은 문자 앱에서 확인!</p><label class="delivery-label" for="phoneDest">수신 전화번호</label><input class="send-input" type="tel" id="phoneDest" autocomplete="off" inputmode="tel" placeholder="01012345678" maxlength="22"><button class="action yellow" id="smsBtn" type="button">문자 앱 열기 ↗</button><div class="tiny">일반 웹사이트는 문자 앱을 대신해 자동으로 전송 버튼을 누를 수 없어요.</div></article>
+        <article class="card"><div class="card-icon">📧</div><h2>이메일로 축하 보내기</h2><p>생일 축하 메시지가 들어 있는 메일 작성창을 열어요. 받는 사람을 확인하고 전송!</p><label class="delivery-label" for="emailDest">수신 이메일</label><input class="send-input" type="email" id="emailDest" autocomplete="off" placeholder="birthday@example.com" maxlength="254"><button class="action pink" id="emailBtn" type="button">메일 앱 열기 ↗</button><div class="tiny">자동 이메일 발송은 별도의 발송 서비스와 계정 인증이 필요해요.</div></article>
+        <article class="card"><div class="card-icon">📸</div><h2>인스타그램 DM으로 공유</h2><p>문구를 복사하고 인스타그램 DM 화면을 열어요. 상대방을 골라 붙여 넣으면 끝!</p><button class="action pink" id="instagramBtn" type="button">문구 복사 + 인스타그램 열기 ↗</button><div class="tiny">인스타그램 개인 계정에 임의로 DM을 자동 발송하는 것은 지원하지 않아요.</div></article>
+        <article class="card"><div class="card-icon">🌍</div><h2>가능한 모든 공유 앱</h2><p>휴대폰 공유 메뉴에서 설치된 카카오톡 · 문자 · 인스타그램 등 지원하는 앱을 골라 전송해요.</p><button class="action yellow" id="shareAllBtn" type="button">휴대폰 공유 메뉴 열기 ↗</button><div class="tiny">앱별 지원 여부는 기종과 브라우저에 따라 달라질 수 있어요.</div></article>
+      </div>
+      <div class="card" style="margin-bottom:40px"><div class="card-icon">⚙️</div><h2>실제 자동 발송 연결하기</h2><p style="min-height:0">GitHub 저장소의 <b>Actions</b>에 생일 당일 <b>동의한 대상 1명에게 이메일과 문자를 각각 1회</b> 보내는 워크플로를 준비했어요. 자동 전송을 시작하려면 발송 서비스 계정과 비밀키를 직접 설정해야 하며, Instagram DM 자동 발송은 포함되지 않아요.</p><a class="small-link" href="https://github.com/ddogy1212/hbtjm/actions" target="_blank" rel="noopener noreferrer">GitHub Actions 설정 화면 열기 ↗</a></div>
+      <div class="section-heading"><h2>🎉 황재민 생일축하해 x 300 🎉</h2><p>스크롤을 내려도 생일 축하는 끝나지 않음.</p></div>
+      <div class="wall" id="wall" aria-label="황재민 생일 축하 문구 300개"></div>
+      <p class="bottom">만든 목적: 황재민의 레전드 생일을 축하하기 위해 🎂<br>브라우저 알림은 본인 기기에서 허용한 경우에만 작동하며, 카카오톡 DM이 자동 발송되지는 않습니다.<br>소리는 나지 않으며, 자동 알림은 최대 12회 후 종료됩니다.</p>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+  (()=>{
+    'use strict';
+    const PHRASE = '황재민 생일축하해';
+    const wall = document.getElementById('wall');
+    const floatLayer = document.getElementById('floatLayer');
+    const shown = document.getElementById('shownCount');
+    const bursts = document.getElementById('burstCount');
+    const notifs = document.getElementById('notifCount');
+    const status = document.getElementById('notifStatus');
+    const progress = document.getElementById('notifProgress');
+    const autoBtn = document.getElementById('autoBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const toastEl = document.getElementById('toast');
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let toastTimer=0, shownTotal=0, burstTotal=0, sentTotal=0, autoSent=0, autoTimer=null, floatTimer=null, quiet=false;
+    let pieces=[],width=0,height=0,dpr=1,raf=null;
+    const colors=['#ffe46d','#ff66b3','#b493ff','#67e7fc','#ffffff','#7dffad'];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function format(n){return new Intl.NumberFormat('ko-KR').format(n)}
+    function toast(message){toastEl.textContent=message;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('show'),3100)}
+    const fragment=document.createDocumentFragment();
+    for(let i=0;i<300;i++){const s=document.createElement('span');s.textContent=(i+1)+'. '+PHRASE+' 🎂';fragment.appendChild(s)}
+    wall.appendChild(fragment);
+    function spawn(){if(quiet||reduceMotion||document.hidden)return;if(floatLayer.childElementCount>44)return;const e=document.createElement('span');e.className='floating';e.textContent=PHRASE+' '+(['🎂','🎉','💗','🥳','🎁'][Math.floor(Math.random()*5)]);e.style.left=(Math.random()*82-5)+'vw';e.style.setProperty('--drift',(Math.random()*130-65)+'px');e.style.setProperty('--dur',(4+Math.random()*4).toFixed(1)+'s');e.style.color=colors[Math.floor(Math.random()*colors.length)];floatLayer.appendChild(e);shownTotal++;shown.textContent=format(shownTotal);e.addEventListener('animationend',()=>e.remove(),{once:true});}
+    function sizeCanvas(){dpr=Math.min(window.devicePixelRatio||1,2);width=window.innerWidth;height=window.innerHeight;canvas.width=width*dpr;canvas.height=height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+    sizeCanvas();window.addEventListener('resize',sizeCanvas,{passive:true});
+    function addConfetti(n){if(reduceMotion||!ctx)return;for(let i=0;i<n;i++){pieces.push({x:Math.random()*width,y:-Math.random()*height*.25-25,vx:(Math.random()-.5)*4.5,vy:2+Math.random()*4,gravity:.04+Math.random()*.05,spin:Math.random()*6,rot:Math.random()*6,sz:3+Math.random()*6,col:colors[Math.floor(Math.random()*colors.length)],life:180})}if(pieces.length>520)pieces.splice(0,pieces.length-520);if(raf===null)raf=requestAnimationFrame(draw)}
+    function draw(){raf=null;ctx.clearRect(0,0,width,height);for(let i=pieces.length-1;i>=0;i--){let p=pieces[i];p.vy+=p.gravity;p.x+=p.vx+Math.sin(p.rot)*.5;p.y+=p.vy;p.rot+=.06;p.life--;if(p.y>height+30||p.life<=0){pieces.splice(i,1);continue}ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.col;ctx.fillRect(-p.sz/2,-p.sz/2,p.sz,p.sz*.66);ctx.restore()}if(pieces.length&&!document.hidden)raf=requestAnimationFrame(draw)}
+    function burst(n=170){burstTotal++;bursts.textContent=format(burstTotal);for(let i=0;i<Math.min(n,30);i++)setTimeout(spawn,i*65);addConfetti(n);if(!reduceMotion){const ring=document.createElement('div');ring.className='burst-ring';document.getElementById('hero').appendChild(ring);setTimeout(()=>ring.remove(),850)}}
+    async function copyText(text){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}else{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();const ok=document.execCommand('copy');ta.remove();if(!ok)throw Error('copy blocked')}return true}catch(err){return false}}
+    async function copyAmount(n){const ok=await copyText(Array(n).fill(PHRASE+' 🎂🎉').join('\n'));toast(ok?`🎉 ${format(n)}줄 클립보드 복사 완료!`:'복사가 차단됐어. HTTPS 주소에서 버튼을 다시 눌러봐!');}
+    document.getElementById('partyBtn').addEventListener('click',()=>{burst(310);toast('💥 황재민 생일 축하 레전드 폭주!')});
+    document.getElementById('moreBtn').addEventListener('click',()=>{quiet=false;burst(270);toast('🔥 생일 파티 폭발!')});
+    document.getElementById('calmBtn').addEventListener('click',()=>{quiet=!quiet;toast(quiet?'😌 떠다니는 문구 잠시 쉬는 중':'🎉 떠다니는 문구 다시 시작!')});
+    document.getElementById('copyHero').addEventListener('click',()=>copyAmount(1000));
+    document.getElementById('copyBtn').addEventListener('click',()=>copyAmount(Number(document.getElementById('copyAmount').value)));
+    document.getElementById('shareBtn').addEventListener('click',async()=>{
+      const text=PHRASE+'!!! 🎂🎉🎁\n'.repeat(1)+Array(12).fill(PHRASE+' 🥳').join('\n');
+      if(navigator.share){try{await navigator.share({title:'🎂 황재민 생일축하해',text,url:location.protocol.startsWith('http')?location.href:undefined});toast('🎁 공유 메뉴를 열었어!');return}catch(e){if(e.name==='AbortError')return}}
+      const ok=await copyText(text);toast(ok?'📋 공유 문구를 복사했어! 카카오톡에 붙여 넣어줘.':'이 브라우저는 공유를 지원하지 않아. 복사 버튼을 이용해 줘.');
+    });
+    function stopAuto(finished=false){if(autoTimer){clearInterval(autoTimer);autoTimer=null}autoBtn.disabled=false;stopBtn.disabled=true;autoBtn.textContent='자동 알림 다시 시작 💌';status.textContent=finished?'✅ 12건 전송 완료 · 이 기기에서만 알림을 보냈어':'중지됨 · 다시 시작할 수 있어';progress.style.width=finished?'100%':'0%';}
+    async function startAuto(){if(!('Notification' in window)){toast('이 브라우저는 시스템 알림을 지원하지 않아.');return}if(!window.isSecureContext){toast('자동 알림은 HTTPS 사이트에서만 작동해. GitHub Pages에서 열어줘.');return}
+      let permission=Notification.permission;
+      if(permission==='default')permission=await Notification.requestPermission();
+      if(permission!=='granted'){toast('알림 권한이 허용되지 않았어. 휴대폰 설정에서 허용해줘.');return}
+      if(autoTimer)return;
+      autoSent=0;autoBtn.disabled=true;stopBtn.disabled=false;autoBtn.textContent='알림 발송 중…';
+      function sendOne(){if(autoSent>=12){stopAuto(true);return}try{const n=new Notification('🎂 '+PHRASE+'!!!',{body:'재민아 생일 축하해! 🥳🎉 '+(autoSent+1)+'/12',tag:'jaemin-birthday-'+autoSent});n.onclick=()=>{window.focus();n.close()};autoSent++;sentTotal++;notifs.textContent=format(sentTotal);progress.style.width=(autoSent/12*100)+'%';status.textContent=`🔔 이 기기에 ${autoSent}/12건 보냄 · 8초 간격 · 사이트가 열려 있어야 함`;if(autoSent>=12)stopAuto(true)}catch(err){stopAuto();toast('브라우저에서 알림 생성이 차단됐어.')}}
+      sendOne();if(autoSent<12)autoTimer=setInterval(sendOne,8000);
+      toast('💌 내 기기 알림 자동 발송 시작!');
+    }
+    autoBtn.addEventListener('click',startAuto);stopBtn.addEventListener('click',()=>{stopAuto();toast('자동 알림 중지 완료')});
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden&&raf===null&&pieces.length)raf=requestAnimationFrame(draw)});
+    if(!reduceMotion){floatTimer=setInterval(spawn,680);setTimeout(()=>burst(110),350)}
+    else{shownTotal=300;shown.textContent=format(shownTotal)}
+
+    // External apps require deliberate user action; no hidden/background mass messaging.
+    const approval=document.getElementById('receiverConsent');
+    const giftMessage=()=>PHRASE+'!!! 🎂🎉\n재민아 생일 진짜 축하해! 🥳🎁\n'+(location.protocol==='https:'?location.href:'');
+    function approved(){if(approval.checked)return true;toast('받는 사람의 동의를 먼저 확인해 줘!');approval.focus();return false}
+    document.getElementById('smsBtn').addEventListener('click',()=>{
+      if(!approved())return;
+      const tel=document.getElementById('phoneDest').value.replace(/[\s()\-]/g,'');
+      if(!/^\+?\d{8,15}$/.test(tel)){toast('전화번호를 정확히 입력해 줘.');return}
+      location.href='sms:'+tel+'?body='+encodeURIComponent(PHRASE+'!!! 🎂🎉 생일 정말 축하해! 🥳');
+      toast('문자 앱을 열었어! 내용 확인 후 직접 전송해 줘.');
+    });
+    document.getElementById('emailBtn').addEventListener('click',()=>{
+      if(!approved())return;
+      const address=document.getElementById('emailDest').value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(address)){toast('이메일 주소를 확인해 줘.');return}
+      location.href='mailto:'+encodeURIComponent(address)+'?subject='+encodeURIComponent('🎂 '+PHRASE+'!!!')+'&body='+encodeURIComponent(giftMessage());
+      toast('메일 작성창을 열었어! 직접 전송해 줘.');
+    });
+    document.getElementById('instagramBtn').addEventListener('click',async()=>{
+      if(!approved())return;
+      const popup=window.open('https://www.instagram.com/direct/inbox/','_blank','noopener,noreferrer');
+      const ok=await copyText(giftMessage());
+      toast(ok?'인스타그램 DM에서 붙여 넣을 문구를 복사했어!':'인스타그램에서 문구를 직접 입력해 줘.');
+      if(!popup)toast('팝업이 차단됐다면 인스타그램 앱을 직접 열어 줘.');
+    });
+    document.getElementById('shareAllBtn').addEventListener('click',async()=>{
+      if(!approved())return;
+      if(navigator.share){
+        try{await navigator.share({title:'🎂 '+PHRASE,text:giftMessage()});toast('공유 메뉴를 열었어!');return}
+        catch(e){if(e.name==='AbortError')return}
+      }
+      const ok=await copyText(giftMessage());
+      toast(ok?'기본 공유 기능이 없어 문구를 클립보드에 복사했어.':'공유 기능이 지원되지 않아. 복사 버튼을 사용해 줘.');
+    });
+  })();
+  </script>
+</body>
+</html>
