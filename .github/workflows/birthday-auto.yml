@@ -1,0 +1,38 @@
+name: Birthday - consented self messages
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every day around 00:10 KST. Python checks the configured birthday.
+    - cron: "10 15 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: birthday-single-recipient
+  cancel-in-progress: false
+
+jobs:
+  birthday:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Send birthday greeting (opt-in required)
+        env:
+          BIRTHDAY_MMDD: ${{ vars.BIRTHDAY_MMDD }}
+          CONSENT_CONFIRMED: ${{ vars.CONSENT_CONFIRMED }}
+          TARGET_EMAIL: ${{ secrets.TARGET_EMAIL }}
+          TARGET_PHONE: ${{ secrets.TARGET_PHONE }}
+          SMTP_HOST: ${{ vars.SMTP_HOST }}
+          SMTP_PORT: ${{ vars.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_FROM: ${{ secrets.TWILIO_FROM }}
+        run: python scripts/send_birthday.py
